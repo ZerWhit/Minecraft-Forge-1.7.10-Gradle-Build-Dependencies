@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+  <info organisation="net.minecraftforge.srg2source" module="Srg2Source" revision="3.2-SNAPSHOT" status="integration" publication="20200718194006">
+    <license name="The BSD 3-Clause License" url="http://opensource.org/licenses/BSD-3-Clause"/>
+    <description homepage="https://github.com/MinecraftForge/Srg2Source">Srg2Source library for ForgeGradle</description>
+  </info>
+  <configurations>
+    <conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+    <conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+    <conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+    <conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+    <conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+    <conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+    <conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+    <conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+    <conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+    <conf name="optional" visibility="public" description="contains all optional dependencies"/>
+  </configurations>
+  <publications/>
+  <dependencies>
+    <dependency org="org.eclipse.jdt" name="org.eclipse.jdt.core" rev="3.10.0.v20131029-1755" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.core" name="jobs" rev="3.5.300-v20130429-1813" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse" name="osgi" rev="3.9.1-v20130814-1242" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="net.sf.opencsv" name="opencsv" rev="2.3" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.core" name="contenttype" rev="3.4.200-v20130326-1255" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.core" name="resources" rev="3.2.1-R32x_v20060914" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.equinox" name="common" rev="3.6.200-v20130402-1505" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.text" name="org.eclipse.text" rev="3.5.101" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.jgit" name="org.eclipse.jgit" rev="3.2.0.201312181205-r" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.equinox" name="preferences" rev="3.5.100-v20130422-1538" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.ow2.asm" name="asm-debug-all" rev="5.0.3" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="com.google.guava" name="guava" rev="18.0" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="net.sf.jopt-simple" name="jopt-simple" rev="4.6" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+    <dependency org="org.eclipse.core" name="runtime" rev="3.9.0-v20130326-1255" force="true" conf="compile-&gt;compile(*),master(*);runtime-&gt;runtime(*)"/>
+  </dependencies>
+</ivy-module>
